@@ -41,8 +41,8 @@ public class AddMessage implements HttpHandler {
         BufferedReader br = new BufferedReader(new InputStreamReader(exchange.getRequestBody()));
         String userCredentials = br.readLine();
         String[] entries = userCredentials.split("&");
-        String message = URLDecoder.decode(entries[0].split("=")[1].trim(), StandardCharsets.UTF_8.toString());
-        String author = URLDecoder.decode(entries[1].split("=")[1].trim(), StandardCharsets.UTF_8.toString());
+        String message = URLDecoder.decode(entries[0].split("=")[1].trim(), StandardCharsets.ISO_8859_1.toString());
+        String author = URLDecoder.decode(entries[1].split("=")[1].trim(), StandardCharsets.ISO_8859_1.toString());
         return new BookEntry(message, author);
 
     }
